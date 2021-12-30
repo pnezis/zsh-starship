@@ -1,3 +1,8 @@
-SCRIPT_PATH="${0:A:h}"
+_zsh_starship_load() {
+    eval "$(starship init zsh)"
+}
 
-source $SCRIPT_PATH/zsh-starship.zsh
+# load starship if it is installed
+if command -v starship &>/dev/null; then
+    _zsh_starship_load
+fi
